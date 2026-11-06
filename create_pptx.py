@@ -140,9 +140,9 @@ add_rect(slide, Inches(1.5), Inches(4.3), Inches(3), Inches(0.05), TERRACOTTA)
 
 # Info
 add_text(slide, Inches(1.5), Inches(4.8), Inches(5), Inches(0.4),
-         "Sviluppato da Enrico Maria Caruso", 18, TEXT_MEDIUM, False)
+         "Sviluppato da A2Digital Solutions", 18, TEXT_MEDIUM, False)
 add_text(slide, Inches(1.5), Inches(5.3), Inches(5), Inches(0.4),
-         "emcdigitalsolutions.it", 16, SAGE, False)
+         "www.a2digital.it", 16, SAGE, False)
 
 # Right side - brand card
 card = add_shape(slide, Inches(8.5), Inches(2), Inches(4), Inches(4), WHITE, SAGE)
@@ -506,10 +506,10 @@ add_rect(slide, 0, 0, W, Inches(0.06), HERBORA_GREEN)
 
 # Main content centered
 add_text(slide, Inches(1), Inches(1.5), Inches(11.3), Inches(1),
-         "Il tuo sito è online e pronto.", 42, HERBORA_DARK, True, PP_ALIGN.CENTER)
+         "Il tuo sito è pronto.", 42, HERBORA_DARK, True, PP_ALIGN.CENTER)
 
 add_text(slide, Inches(1), Inches(2.7), Inches(11.3), Inches(0.6),
-         "enrix84.github.io/herbora", 28, TERRACOTTA, True, PP_ALIGN.CENTER)
+         "Herbora — Partanna", 28, TERRACOTTA, True, PP_ALIGN.CENTER)
 
 add_rect(slide, Inches(5.5), Inches(3.6), Inches(2.3), Inches(0.04), SAGE)
 
@@ -517,10 +517,10 @@ add_text(slide, Inches(1), Inches(4), Inches(11.3), Inches(1),
          "Sviluppato da", 18, TEXT_MEDIUM, False, PP_ALIGN.CENTER)
 
 add_text(slide, Inches(1), Inches(4.5), Inches(11.3), Inches(0.8),
-         "Enrico Maria Caruso", 32, HERBORA_DARK, True, PP_ALIGN.CENTER)
+         "A2Digital Solutions", 32, HERBORA_DARK, True, PP_ALIGN.CENTER)
 
 add_text(slide, Inches(1), Inches(5.3), Inches(11.3), Inches(0.5),
-         "Full Stack Developer — emcdigitalsolutions.it", 18, SAGE, False, PP_ALIGN.CENTER)
+         "Software, gestionali e siti — www.a2digital.it", 18, SAGE, False, PP_ALIGN.CENTER)
 
 # Bottom bar
 add_rect(slide, 0, Inches(7.3), W, Inches(0.2), HERBORA_GREEN)
