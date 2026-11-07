@@ -1351,7 +1351,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .carousel-card-image {
-    height: 200px;
+    /* stesse proporzioni su ogni schermo (260×200): sul telefono le card sono più strette
+       e con un'altezza fissa le immagini venivano tagliate ai lati */
+    aspect-ratio: 13 / 10;
     overflow: hidden;
 }
 
