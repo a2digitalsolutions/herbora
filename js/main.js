@@ -246,6 +246,49 @@
     }
 
 
+    // ===== HERO: PRODOTTI FITODIMA A TURNO =====
+    var fito = document.getElementById('heroFitodima');
+    if (fito) {
+        var fitoSlides = fito.querySelectorAll('.hero-fitodima-slide');
+        var fitoDots = fito.querySelectorAll('.hero-fitodima-dots button');
+        var fitoIndex = 0;
+        var fitoTimer = null;
+        var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        var showFito = function (i) {
+            fitoIndex = (i + fitoSlides.length) % fitoSlides.length;
+            fitoSlides.forEach(function (slide, n) {
+                var on = n === fitoIndex;
+                slide.classList.toggle('is-active', on);
+                slide.setAttribute('aria-hidden', on ? 'false' : 'true');
+                slide.setAttribute('tabindex', on ? '0' : '-1');
+            });
+            fitoDots.forEach(function (dot, n) {
+                dot.setAttribute('aria-selected', n === fitoIndex ? 'true' : 'false');
+            });
+        };
+        var stopFito = function () { if (fitoTimer) { clearInterval(fitoTimer); fitoTimer = null; } };
+        var startFito = function () {
+            stopFito();
+            if (!reduceMotion && fitoSlides.length > 1) {
+                fitoTimer = setInterval(function () { showFito(fitoIndex + 1); }, 5000);
+            }
+        };
+
+        fitoDots.forEach(function (dot, n) {
+            dot.addEventListener('click', function () { showFito(n); startFito(); });
+        });
+        // si ferma quando ci si passa sopra o lo si usa da tastiera, riparte quando si esce
+        fito.addEventListener('mouseenter', stopFito);
+        fito.addEventListener('mouseleave', startFito);
+        fito.addEventListener('focusin', stopFito);
+        fito.addEventListener('focusout', startFito);
+        document.addEventListener('visibilitychange', function () { if (document.hidden) { stopFito(); } else { startFito(); } });
+
+        showFito(0);
+        startFito();
+    }
+
     // ===== INITIAL CHECK =====
     handleNavbarScroll();
 

@@ -2635,3 +2635,136 @@ h1, h2, h3, h4, h5, h6 {
         flex: 0 0 190px;
     }
 }
+
+
+/* ===== HERO · IN PRIMO PIANO LINEA FITODIMA (prodotti a turno) ===== */
+.hero-fitodima {
+    margin-top: 1.5rem;
+    max-width: 520px;
+    background: #fff;
+    border: 1px solid rgba(46, 125, 80, 0.14);
+    border-radius: 20px;
+    padding: 0.9rem 1rem 1rem;
+    box-shadow: 0 14px 34px -22px rgba(29, 92, 56, 0.45);
+    text-align: left;
+}
+.hero-fitodima-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+}
+.hero-fitodima-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+}
+.hero-fitodima-label a { color: var(--herbora-green); text-decoration: none; }
+.hero-fitodima-label a:hover { text-decoration: underline; }
+.hero-fitodima-dots { display: flex; gap: 2px; }
+.hero-fitodima-dots button {
+    width: 32px;
+    height: 32px;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    padding: 0;
+}
+.hero-fitodima-dots button::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--sage);
+    transition: width 0.3s ease, background 0.3s ease;
+}
+.hero-fitodima-dots button[aria-selected="true"]::after {
+    width: 22px;
+    border-radius: 6px;
+    background: var(--herbora-green);
+}
+.hero-fitodima-slides { display: grid; }
+.hero-fitodima-slide {
+    grid-area: 1 / 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: inherit;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(12px);
+    transition: opacity 0.6s ease, transform 0.6s ease, visibility 0s linear 0.6s;
+    border-radius: 14px;
+}
+.hero-fitodima-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.hero-fitodima-slide img {
+    width: 112px;
+    height: 112px;
+    flex: none;
+    object-fit: contain;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid var(--sage-light);
+}
+.hero-fitodima-text { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; min-width: 0; }
+.hero-fitodima-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--herbora-green);
+    background: var(--sage-light);
+    padding: 3px 10px;
+    border-radius: 50px;
+}
+.hero-fitodima-text strong {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    line-height: 1.1;
+    color: var(--herbora-dark);
+}
+.hero-fitodima-desc { font-size: 0.9rem; line-height: 1.5; color: var(--text-medium); }
+.hero-fitodima-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--terracotta);
+    transition: gap 0.3s ease;
+}
+.hero-fitodima-slide:hover .hero-fitodima-cta,
+.hero-fitodima-slide:focus-visible .hero-fitodima-cta { gap: 8px; }
+.hero-fitodima-slide:focus-visible { outline: 3px solid var(--sage); outline-offset: 4px; }
+
+@media (max-width: 1024px) {
+    .hero-fitodima { margin-left: auto; margin-right: auto; }
+}
+@media (max-width: 480px) {
+    .hero-fitodima { padding: 0.8rem; }
+    .hero-fitodima-label { font-size: 0.72rem; letter-spacing: 0.06em; }
+    .hero-fitodima-pre { display: none; }
+    .hero-fitodima-slide { gap: 0.8rem; align-items: flex-start; }
+    .hero-fitodima-slide img { width: 88px; height: 88px; }
+    .hero-fitodima-text strong { font-size: 1.35rem; }
+    .hero-fitodima-desc { font-size: 0.85rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-fitodima-slide { transition: none; transform: none; }
+}
